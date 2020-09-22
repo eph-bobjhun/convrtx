@@ -1,0 +1,32 @@
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+<div></div>
+aaa
+<h1 id="scroll-to">I am The H1</h1>
+aaa
+<div></div>
+
+<style>
+div {
+    height:900px;
+    margin-bottom: 100px;
+}
+h1 {
+    display:none;
+}
+</style>
+
+<script type="text/javascript">
+$(window).scroll(function() {
+   var hT = $('#scroll-to').offset().top,
+       hH = $('#scroll-to').outerHeight(),
+       wH = $(window).height(),
+       wS = $(this).scrollTop();
+    console.log((hT-wH) , wS);
+   if (wS > (hT+hH-wH)){
+    $('#scroll-to').fadeIn(3500);
+
+    $('#scroll-to').addClass('trans-delay-12222');
+    
+   }
+});
+</script>
